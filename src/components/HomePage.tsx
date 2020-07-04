@@ -1,6 +1,7 @@
 import React from 'react';
 import { Login } from './Login';
 import { Camera } from './Camera';
+import { QrCode } from './QrCode';
 
 
 type HomePageState = {
@@ -35,7 +36,10 @@ export class HomePage extends React.Component<any, HomePageState> {
             );
         } else {
             return (
-                <Camera/>
+                <div>
+                    <Camera/>
+                    <QrCode/>
+                </div>
             );
         }
     }
