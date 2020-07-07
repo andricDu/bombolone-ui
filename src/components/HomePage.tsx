@@ -1,7 +1,6 @@
 import React from 'react';
 import { Login } from './Login';
-import { Camera } from './Camera';
-import { QrCode } from './QrCode';
+import { MainDisplay } from './MainDisplay'
 
 
 type HomePageState = {
@@ -36,10 +35,7 @@ export class HomePage extends React.Component<any, HomePageState> {
             );
         } else {
             return (
-                <div>
-                    <Camera/>
-                    <QrCode/>
-                </div>
+                <MainDisplay />
             );
         }
     }
@@ -49,6 +45,7 @@ export class HomePage extends React.Component<any, HomePageState> {
             credentials: "include",
         })
         .then(res => {
+            console.log(res);
             if (res.status === 200) {
                 this.setState({loggedIn: true});
             } else if (res.status === 401 || res.status === 403) {
@@ -56,6 +53,8 @@ export class HomePage extends React.Component<any, HomePageState> {
             } else {
                 this.setState({error: true});
             }
+        }).catch(err => {
+            this.setState({error: true});
         });
     }
 
