@@ -70,8 +70,8 @@ export class Login extends React.Component<LoginProps, LoginState> {
 
     private handleScan = (data: any) => {
         if (data) {
-            alert("Code Scanned, try Login.")
             this.setState({secret: data});
+            this.doLogin();
         }
     }
 
