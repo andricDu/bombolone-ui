@@ -5,6 +5,9 @@ import { QrCode } from './QrCode';
 export const MainDisplay = (props: any) => {
     return (
         <div className="ui grid">
+            <div className="one column row login-header">
+                <h1 className="column block violet inverted center aligned header">Bombolone-Cam</h1>
+            </div>
             <div className="one column row">
                 <h2 className="column block inverted section-header">Camera</h2>
             </div>
@@ -24,6 +27,9 @@ export const MainDisplay = (props: any) => {
             </div>
 
 
+            <div className="one column row">
+                <h2 className="column block inverted section-header">Settings</h2>
+            </div>
             <div className="one column center row">
                 <div className="column center">
                     <QrCode/>
